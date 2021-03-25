@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Test</title>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+			color: #333;
+		}
+
+		*{
+			box-sizing: border-box;
+		}
+
+		header{
+			padding: 1rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			background-color: #bada55;
+			border-radius: 0 0 1rem 1rem;
+			border-bottom: 2px solid #cae86c;
+			box-shadow: 0 0.25rem 0.25rem 0 rgba(0,0,0,0.2);
+		}
+
+		header h1{
+			padding: 1rem;
+			flex: 1;
+		}
+
+		.wrapper{
+			min-height: 90vh;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 2rem;
+			padding: 1rem;
+		}
+
+		.center-text{
+			text-align: center;
+			margin: auto;
+		}
+
+		.container-holder{
+			box-shadow: 0 0.25rem 1rem 1px rgba(0,0,0,0.3);
+			border: 1px solid #ddd;
+			border-radius: 1rem;
+
+		}
+
+		.containers{
+			display: block;
+			padding: 2rem;
+			width: 100%;
+			height: calc(100% - 2rem - 2px);
+			outline: none;
+			border: none;
+			font-family: monospace;
+			resize: none;
+		}
+
+		.bottom-seperator{
+			width: 90%;
+			margin: 0 auto;
+		}
+
+		.icons{
+			margin: auto;
+			width: 90%;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+		}
+
+		.fa{
+			padding: 0.5rem;
+			border-radius: 1rem;
+			cursor: pointer;
+		}
+
+		.fa:hover{
+			background-color: #bada55;
+			transition: all 0.5s;
+		}
+
+		.icon-info{
+			font-family: sans-serif;
+		}
+
+		@media all and (max-width: 600px) {
+			.wrapper{
+				grid-template-columns: 1fr;
+				grid-template-rows: repeat(2, 1fr);
+			}
+
+			header h1{
+				font-size: 1.5rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<header>
+			<h1 class="center-text">HTML</h1>
+			<h1 class="center-text">to</h1>
+			<h1 class="center-text">JavaScript</h1>
+		</header>
+		<div class="wrapper">
+			<div class="container-holder">
+				<textarea placeholder="past HTML code here" class="containers" id="input"></textarea>
+				<hr class="bottom-seperator">
+				<section class="icons"><i id="convert" onclick="prepare();" class="fa fa-bomb"><span class="icon-info"> Convert</span></i><i title="copy" class="fa fa-clone"><span class="icon-info"> Copy<span></i></section>
+			</div>
+			<div class="container-holder">
+				<textarea class="containers" placeholder="output..." id="output"></textarea>
+				<hr class="bottom-seperator">
+				<section class="icons"><i title="copy" class="fa fa-clone"><span class="icon-info"> Copy<span></i></section>
+			</div>
+		</div>
+	</main>
+	<script src="scr2.js"></script>
+</body>
+</html>
